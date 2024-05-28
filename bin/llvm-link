@@ -1,0 +1,4 @@
+#!/bin/bash
+SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+export LD_PRELOAD="$SCRIPT_DIR/lib/libLLVM-9.so.1 $SCRIPT_DIR/lib/libclang-cpp.so.9 $SCRIPT_DIR/lib/libffi.so.7"
+$SCRIPT_DIR/llvm-link-9 $@
